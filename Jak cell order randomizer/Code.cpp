@@ -1,4 +1,5 @@
 #include <iostream>
+#include <time.h>
 using namespace std;
 
 const int CELLCOUNT = 94, HUBONE = 34;
