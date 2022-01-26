@@ -148,7 +148,7 @@ int main() {
 				do {
 					if (duplicate[35] == false) // This makes sure you don't get hub 2/3 cells before "reach the end of fire canyon".
 						cellNumber = rand() % 36;
-					else if ((i-FCcheck) < 2) // This is just so that you don't get snowy cells before you've been able to unlock gondola, aka 2 cells after FC.
+					else if ((i-FCcheck) <= 2) // This is just so that you don't get snowy cells before you've been able to unlock gondola, aka 2 cells after FC.
 						cellNumber = rand() % (CELLCOUNT - 8); 
 					else cellNumber = rand() % CELLCOUNT;
 				} while (duplicate[19] == false && cellNumber >= (HUBONE - 8) && cellNumber < HUBONE); // Again, no misty cells before fish.
