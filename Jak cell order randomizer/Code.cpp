@@ -111,6 +111,7 @@ int main() {
 			i--;
 		while (duplicate[cellNumber] == false) {
 			cout << i + 1 << ". " << cells[cellNumber] << endl;
+			getchar();
 			duplicate[cellNumber] = true;
 		}
 	}
@@ -135,6 +136,7 @@ int main() {
 				orbCells++;
 			while (duplicate[cellNumber] == false) {
 				cout << i + 5 << ". " << cells[cellNumber] << endl;
+				getchar();
 				duplicate[cellNumber] = true;
 			}
 		}
@@ -160,6 +162,7 @@ int main() {
 			i--;
 			while (duplicate[cellNumber] == false) {
 				cout << i + 21 << ". " << cells[cellNumber] << endl;
+				getchar();
 				duplicate[cellNumber] = true;
 			}
 		}
