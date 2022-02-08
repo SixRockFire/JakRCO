@@ -117,6 +117,7 @@ int main() {
 	bool duplicate[101] = { false };
 	int userInput = 0;
 	bool badInput = false ;
+
 	do {
 		if (userInput == 1)
 			cleanUp(duplicate);
@@ -184,14 +185,16 @@ void randomizer (string cells[], bool duplicate[], int userInput) {
 		do {
 			do {
 				do {
-					if (duplicate[35] == false) // This makes sure you don't get hub 2/3 cells before "reach the end of fire canyon".
-						cellNumber = rand() % 36;
-					else if ((i - FCcheck) <= 2) // This is just so that you don't get snowy cells before you've been able to unlock gondola, aka 2 cells after FC.
-						cellNumber = rand() % (CELLCOUNT - 8);
-					else cellNumber = rand() % CELLCOUNT;
-				} while (duplicate[19] == false && cellNumber >= (HUBONE - 8) && cellNumber < HUBONE); // Again, no misty cells before fish.
-			} while (duplicate[23] == false && cellNumber == 22 || cellNumber == 24); // Again, no temple before top of tower.
-		} while (duplicate[46] == false && cellNumber == 47); // This makes sure you don't get blue rings before purple rings.
+					do {
+						if (duplicate[35] == false) // This makes sure you don't get hub 2/3 cells before "reach the end of fire canyon".
+							cellNumber = rand() % 36;
+						else if ((i - FCcheck) <= 2) // This is just so that you don't get snowy cells before you've been able to unlock gondola, aka 2 cells after FC.
+							cellNumber = rand() % (CELLCOUNT - 8);
+						else cellNumber = rand() % CELLCOUNT;
+					} while (duplicate[19] == false && cellNumber >= (HUBONE - 8) && cellNumber < HUBONE); // Again, no misty cells before fish.
+				} while (duplicate[23] == false && cellNumber == 22 || cellNumber == 24); // Again, no temple before top of tower.
+			} while (duplicate[46] == false && cellNumber == 47); // This makes sure you don't get blue rings before purple rings.
+		} while (cellNumber == 89 && duplicate[86] == false && duplicate[15]==false); // This makes sure you can break the secret cell box in snowy.
 		if (cellNumber == 35)
 			FCcheck = i;
 		if (duplicate[cellNumber])
